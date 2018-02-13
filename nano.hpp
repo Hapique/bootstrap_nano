@@ -22,7 +22,7 @@ public:
 	~Component(void);
 	node_t* get_head(void) const;
 	void add_node(node_t* node, state_t data = UNDEFINED);
-	void print_node(node_t* node) const;
+	void print_node(node_t* node, std::string disp = "n°") const;
 private:
 	std::string state_as_str(state_t state) const;
 	node_t* _head;

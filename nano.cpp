@@ -42,11 +42,12 @@ std::string Component::state_as_str(state_t state) const
 	return str;
 }
 
-void Component::print_node(node_t* node) const
+void Component::print_node(node_t* node, std::string disp) const
 {
-	std::cout << "node value: " << state_as_str(node->state) << '\n';
 	for (unsigned int i = 0 ; i < node->next.size() ; i++) {
-		std::cout << "|---child n°" << i << ": " 
+		std::cout << disp << i << ": " 
 		<< state_as_str(node->next.at(i)->state) << '\n';
+		print_node(node->next.at(i), disp.insert(0, "|---"));
+		disp.erase(0, 4);
 	}
 }

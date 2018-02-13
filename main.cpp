@@ -7,8 +7,12 @@ int main(void)
 
 	cmpt.add_node(node, TRUE);
 	cmpt.add_node(node);
-	cmpt.print_node(node);
-	cmpt.print_node(node->next.at(0));
-	cmpt.print_node(node->next.at(1));
+	node = node->next.at(0);
+	cmpt.add_node(node, TRUE);
+	cmpt.add_node(node, FALSE);
+	node = node->next.at(0);
+	cmpt.add_node(node, FALSE);
+	cmpt.add_node(node, TRUE);
+	cmpt.print_node(cmpt.get_head());
 	return 0;
 }
